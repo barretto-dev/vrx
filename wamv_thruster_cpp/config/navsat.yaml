@@ -1,0 +1,19 @@
+navsat_transform:
+  ros__parameters:
+    frequency: 30.0
+    delay: 0.0
+    zero_altitude: true
+
+    # Se você não tiver magnetômetro, normalmente deixe use_odometry_yaw=false e use a orientação da IMU mesmo.
+    use_odometry_yaw: false
+
+    # Em sim geralmente você quer publicar /odometry/gps para o EKF global
+    publish_filtered_gps: true
+
+    # Se der problema de datum, você pode definir um datum fixo.
+    # Para começar simples, deixe wait_for_datum=false (usa a primeira leitura como referência).
+    wait_for_datum: false
+
+    # Ajuste se necessário (mundo real): declinação magnética e offset de yaw
+    magnetic_declination_radians: 0.0
+    yaw_offset: 0.0
