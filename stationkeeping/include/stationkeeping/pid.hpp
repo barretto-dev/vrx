@@ -27,9 +27,12 @@ struct PID
   {
     if (dt <= 0.0) return 0.0;
 
+    //Termo integral - usado para minimizar o error acumulativo ao longo do tempo
     i_term += e * dt;
     i_term = clamp(i_term, i_min, i_max);
 
+    //Termo derivativo - usado para minimizar ocilações e overshoots
+    //para isso usando a varianção entre o erro atual e o anterior
     double de = 0.0;
     if (have_prev) de = (e - prev_e) / dt;
     prev_e = e;

@@ -1,6 +1,7 @@
 #pragma once
 #include <cmath>
 
+//Garante que o angulo recebido sempre fique no intervalor [−π,π]
 inline double wrap_pi(double a)
 {
   while (a > M_PI) a -= 2.0 * M_PI;
@@ -8,6 +9,7 @@ inline double wrap_pi(double a)
   return a;
 }
 
+//Recebe os valores dos quarterions e retornar o yam em radianos
 inline double yaw_from_quat(double x, double y, double z, double w)
 {
   const double siny_cosp = 2.0 * (w * z + x * y);

@@ -28,21 +28,22 @@ private:
   bool use_sim_time_{true};         // Utilizar tempo da simulação ao invez do real
   double deadband_m_{0.5};          // Distancia minima aceitavel em relação ao objetivo
   double yaw_deadband_deg_{5.0};    // Angulo mínimo de aceitavel para alinhamento
+  bool yaw_disabled_{false};
 
   double thrust_max_{700.0};        // Empuxo máximo permitido
   double thrust_min_{-300.0};       // Empuxo mínimo permitido
   double yaw_mix_max_{400.0};       // Empuxo max/min de rotação
-  double thrust_bias_{80.0};        // Empuxo extra para evitar que comandos pequenos não movam o WAMV
+  double thrust_bias_{70.0};        // Empuxo extra para evitar que comandos pequenos não movam o WAMV
 
   double forward_pos_{0.0};         // Posicionar thurster para avanço reto
-  double left_pos_ccw_{+1.0};
-  double right_pos_ccw_{-1.0};
+  double left_pos_ccw_{+1.5708};
+  double right_pos_ccw_{-1.5708};
   bool use_azimuth_spin_{true};
 
   // === Freio automático ===
   double brake_radius_m_{12.0};   // ativa freio se dist < isso
   double brake_thrust_{-180.0};   // empuxo negativo (freio/ré)
-  int brake_ticks_total_{8};      // duração do freio em ticks
+  int brake_ticks_total_{10};      // duração do freio em ticks
   int brake_ticks_{0};            // contador interno (estado)
   double prev_dist_{1e9};         // para detectar se começou a se afastar
 
