@@ -11,6 +11,7 @@ find_package(rclcpp REQUIRED)
 find_package(std_msgs REQUIRED)
 find_package(sensor_msgs REQUIRED)
 find_package(geometry_msgs REQUIRED)
+find_package(ros_gz_interfaces REQUIRED)
 
 include_directories(include)
 
@@ -32,7 +33,7 @@ add_executable(wildlife_node
 )
 
 ament_target_dependencies(wildlife_node
-  rclcpp std_msgs sensor_msgs geometry_msgs
+  rclcpp std_msgs sensor_msgs geometry_msgs ros_gz_interfaces
 )
 
 install(TARGETS wildlife_node
