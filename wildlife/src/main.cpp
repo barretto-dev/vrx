@@ -5,7 +5,7 @@
 #include <csignal>
 #include <iostream>
 
-#include "wildlife/wildlife_node.hpp"
+#include "wildlife/wildlife_node2.hpp"
 
 using namespace std::chrono_literals;
 

@@ -29,7 +29,9 @@ endif()
 
 add_executable(wildlife_node
   src/main.cpp
-  src/wildlife_node.cpp
+  src/wildlife_node2.cpp
+  src/wildlife_interface.cpp
+  src/wildlife_controller.cpp
 )
 
 ament_target_dependencies(wildlife_node
